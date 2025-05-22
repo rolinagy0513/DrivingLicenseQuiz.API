@@ -1,0 +1,6 @@
+@DrivingLicenseQuiz.API_HostAddress = http://localhost:5073
+
+GET {{DrivingLicenseQuiz.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
