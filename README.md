@@ -1,6 +1,6 @@
-##Driving License Quiz App
+Driving License Quiz App
 
-##Indítási útmutató
+Indítási útmutató
 
 Navigáljon az alkalmazás backend könyvtárába:
  - cd DrivingLicenseQuiz.API
