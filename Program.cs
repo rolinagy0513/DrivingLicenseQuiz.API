@@ -3,14 +3,14 @@ using DrivingLicenseQuiz.API.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 builder.Services.AddControllers();
 
-// Configure SQLite database
+
 builder.Services.AddDbContext<QuizDbContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// Add CORS policy
+
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowWebApp",
@@ -21,13 +21,13 @@ builder.Services.AddCors(options =>
             .AllowCredentials());
 });
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
+
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -35,7 +35,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles(); // Enable serving static files from wwwroot
+app.UseStaticFiles(); 
 
 app.UseCors("AllowWebApp");
 
@@ -43,7 +43,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-// Seed the database
 using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
